@@ -54,8 +54,6 @@ function get_class_slots(selected_course){
         //NOTE: WE CAN INCREASE ACCURACY BY UPDATING "availableSlots" EVERY TIME A COURSE IS SELECTED
         
         if (selected_course == availableSlots[course].course_name){
-            //clear previous options
-            document.querySelector('#slots').innerHTML = "";
             //initialize date-time object to store selected course data
             dateTimeOfClasses = {};
 
