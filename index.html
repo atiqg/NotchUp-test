@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotchUp-Classes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link type="text/css" href="styles.css">
 </head>
 <!--
 -->
 <body>
-    <form action="/action_page.php">
+    <form id="notchUpForm">
         <label for="pname">Parent's Name: </label><br>
         <input type="text" id="Pname" name="Pname" placeholder="Rohit Likhala"><br>
         <label for="lname">Parent's Contact Number: </label><br>
@@ -23,20 +23,108 @@
         <label for="lname">Child's Age: </label><br>
         <input type="number" id="UName" name="UAge" placeholder="15"><br>
         <label for="lname">Course Name: </label><br>
-        <select name="courses" id="courses">
-            <option value="game_development">GAME DEVELOPMENT LEVEL 1</option>
-            <option value="web_development">WEB DEVELOPMENT LEVEL 1</option>
-            <option value="app_development">APP DEVELOPMENT LEVEL 1</option>
-            <option value="python">PYTHON</option>
-            <option value="online_coding">SCRATCH JUNIOR</option>
+        <select name="courses" id="courses" onChange='get_class_slots(this.value);'>
         </select></br>
         <label for="lname">Date for the class: </label><br>
-        <input type="date" id="date" placeholder="xx/xx/xxxx"><br>
+        <select type="text" id="date" onChange='show_available_class_time(this.value);' placeholder="xx/xx/xxxx">
+        </select></br>
         <label for="lname">Time Slot for the class: </label><br>
-        <input type="time" id="time" placeholder="xx:xx"><br>
+        <select type="text" id="time" placeholder="xx:xx">
+        </select></br>
         <p>* Each trial class duration is 1 hour</p><br>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="document.querySelector('#notchUpForm').reset()">
     </form> 
+    <script src="script.js"></script> 
 </body>
 </html>
+
+
+<!--
+    Part 1A) Build a webpage with a form that people can use to book a trial class on notchup.co. The form should be able to capture the following details:
+
+1.      Parent's Name
+
+2.      Parent's Contact Number
+
+3.      Parent's Email ID
+
+4.      Child's Name
+
+5.      Child's Age
+
+6.      Course Name
+
+7.      Suitable Date for a trial class
+
+8.      Suitable Time Slot for the trial class
+
+Things to note:
+
+1.      There are 6 courses available at NotchUp. Check the website for details.
+
+2.      Each trial slot is for 1 hour duration.
+
+3.      Slots are fetched from a GET request (Details below) and each timeslot is in unixtime format.
+
+4.      Earliest slot we can show should be minimum 4 hours from now.
+
+5.      Latest slot should be maximum 7 days from now.
+
+6.      On submitting the form, you may simply clear the form without needing to post that data.
+
+API Contract for fetching available slots
+
+URL: https://script.google.com/macros/s/AKfycbzJ8Nn2ytbGO8QOkGU1kfU9q50RjDHje4Ysphyesyh-osS76wep/exec
+
+METHOD: GET
+
+ 
+
+Sample Response:
+A series of courses with available slots details:
+
+[{"course_id":1,"course_name":"Scratch Junior","slots":[{"slot":"1588422600000","instructor_count":2},{"slot":"1588424400000","instructor_count":2},{"slot":"1588426200000","instructor_count":2},{"slot":"1588480200000","instructor_count":6},{"slot":"1588482000000","instructor_count":2}]},
+
+{"course_id":2,"course_name":"Web Development","slots":[{"slot":"1588422600000","instructor_count":2},{"slot":"1588424400000","instructor_count":2},{"slot":"1588426200000","instructor_count":2},{"slot":"1588480200000","instructor_count":6},{"slot":"1588482000000","instructor_count":2}]}]
+
+ 
+
+Part 1B) The data submitted through the form needs to be sent to a server which is responsible for sending out confirmation email to the users.
+
+    Set up an API on a node JS server that can take the form submission fields as an input.
+    On each submission, the server should send out an email on the given parent's email id.
+    The email should be formatted as follows:
+        Title: NotchUp Trial Class Booked successfully
+        Body:
+
+Dear {{ParentName}}
+
+{{StudentName}}'s class at {{SlotTime}} has been successfully booked.
+
+    On successful submission of an email, send a success response back to your web app
+    The web app should be able to show an appropriate message to the user
+    Handle any sort of errors and issues you can think of
+
+Criteria for judgement
+
+1.      Usability
+
+2.      Design
+
+3.      Code quality
+
+4.      Site Responsiveness and Latency
+
+5.      Time taken for development (Brownie points for submitting within 48 hours)
+
+Submission and Deadline: 
+
+You need to complete this task latest within 7 days. You may make your submission in one of the following ways:
+
+1.      Host the webpage on a free hosting service like sites.google.com or herokuapp.com. Reply to this email with a link of the webpage.
+
+2.      Put your code as a zip file, record a video on how to use the website, and send the zip as well as the video as a reply to this email.
+
+In case of any doubts, feel to reply to this email. Wish you all the best!
+-->
