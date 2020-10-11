@@ -166,3 +166,33 @@ function get_formatted_time(time_obj){
     
     return ((hour % 12) || 12) + ':' + min + ' ' + amPm;
 }
+
+/**
+ * FUNCTION TO SEND A ASYNC MAIL REQUEST TO SERVER
+ * WITH ALL THE PARAMETER TAKEN FROM USER FORM
+ * 1. GET ALL VALUES OF FORM
+ * 2. CONFIGURE MAIL REQUEST URL
+ * 3. MAKE AN ASYNC REQUEST AND SHOW/PRINT RESPONSE 
+ */
+function send_confirmation_mail(){
+    //get form data
+    let parentEmail = document.querySelector('#parentEmail').value;
+    let parentName = document.querySelector('#parentName').value;
+    let studentName = document.querySelector('#studentName').value;
+    let date = document.querySelector('#date').value;
+    let time = document.querySelector('#time').value;
+    //configure mail request url
+    let url = 'https://us-central1-notchup-test.cloudfunctions.net/sendMail?parentName='+ parentName +
+    '&studentName=' + studentName + '&classTime=' + date + ' ' + time + 
+    '&parentEmail='+ parentEmail;
+    //request
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            //success acknowledgement
+            document.querySelector('#test').innerHTML = 'Your Trial Class is successfully booked';
+        }
+    }
+    xmlHttp.open("GET", url, true);
+    xmlHttp.send(null);
+}

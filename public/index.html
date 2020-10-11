@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NotchUp-Classes</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-performance.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+  </head>
+  <body>
+    <form id="notchUpForm" onsubmit="send_confirmation_mail(); return false;">
+      <label for="pname">Parent's Name: </label><br>
+      <input type="text" id="parentName" name="parentName" placeholder="Rohit Likhala"><br>
+      <label for="lname">Parent's Contact Number: </label><br>
+      <input type="number" id="parentContact" name="parentContact" placeholder="9998"><br>
+      <label for="lname">Parent's Email ID: </label><br>
+      <input type="email" id="parentEmail" name="parentEmail" placeholder="rohitXX@gmail.com"><br>
+      <label for="lname">Child's Name: </label><br>
+      <input type="text" id="studentName" name="studentName" placeholder="junior likhala"><br>
+      <label for="lname">Child's Age: </label><br>
+      <input type="number" id="studentAge" name="studentAge" placeholder="15"><br>
+      <label for="lname">Course Name: </label><br>
+      <select name="courses" id="courses" onChange='get_class_slots(this.value);'>
+      </select></br>
+      <label for="lname">Date for the class: </label><br>
+      <select type="text" id="date" onChange='show_available_class_time(this.value);' placeholder="xx/xx/xxxx">
+      </select></br>
+      <label for="lname">Time Slot for the class: </label><br>
+      <select type="text" id="time" name="classTime" placeholder="xx:xx">
+      </select></br>
+      <p>* Each trial class duration is 1 hour</p><br>
+      <br>
+
+      <input type="submit" value="Submit">
+    </form> 
+    <p id='test'></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
