@@ -2,8 +2,8 @@
 This is web app to book trial class on NotchUp education platform
 
 * [Web app](https://notchup-test.web.app/)        
-* [Frontend](https://github.com/atiqg/NotchUp-test/tree/main/public)      
-* [Backend](https://github.com/atiqg/NotchUp-test/tree/main/functions)     
+* [Frontend code](https://github.com/atiqg/NotchUp-test/tree/main/public)      
+* [Backend code](https://github.com/atiqg/NotchUp-test/tree/main/functions)     
 <br>
 
 ## Assignment:       

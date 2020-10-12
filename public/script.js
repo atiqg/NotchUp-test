@@ -68,7 +68,7 @@ function get_class_slots(selected_course){
             for (let slot_id = 0; slot_id < availableSlots[course].slots.length; slot_id++) {
                 //<<<NOTE>>>> SLOTS COMING FROM NOTCHUP ENDPOINT GIVING "ONLY" PAST DATES (4 OCT)
                 //TO OVERCOME THAT WE CAN BUMP SLOTS TO "x" DAYS AHEAD
-                time_slot = new Date(Number(availableSlots[course].slots[slot_id].slot) + (7 * 24 * 60 * 60 * 1000));
+                time_slot = new Date(Number(availableSlots[course].slots[slot_id].slot) + (9 * 24 * 60 * 60 * 1000));
                 
                 if(fourHourIntercept.getTime() > time_slot.getTime()){
                     continue;//discard slot if condition matches
@@ -190,7 +190,7 @@ function send_confirmation_mail(){
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
             //success acknowledgement
-            document.querySelector('#test').innerHTML = 'Your Trial Class is successfully booked';
+            document.querySelector('#acknowledgment').innerHTML = 'Your Trial Class is successfully booked';
         }
     }
     xmlHttp.open("GET", url, true);
