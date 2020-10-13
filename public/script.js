@@ -190,9 +190,23 @@ function send_confirmation_mail(){
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
             //success acknowledgement
-            document.querySelector('#acknowledgment').innerHTML = 'Your Trial Class is successfully booked';
+            //document.querySelector('#acknowledgment').innerHTML = 'Your Trial Class is successfully booked';
+            let body = document.querySelector('#body');
+            let tempBody = body.innerHTML;
+            body.innerHTML = "<p id='acknowledgment'>Your NotchUp Trial Class is successfully booked</p>";
+            sleep(6000).then(() => {
+                body.innerHTML = tempBody;
+            })
         }
     }
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
+}
+
+/**
+ * delay execution of statement for some milliseconds
+ * @param {number} milliseconds 
+ */
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
 }

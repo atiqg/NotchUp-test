@@ -21,4 +21,4 @@ This is web app to book trial class on NotchUp education platform
 [x] - Set up an API on a node JS server that can take the form submission fields as an input.       
 [x] - On each submission, the server should send out an email on the given parent's email id.         
 [x] - Host the webpage on a free hosting service like sites.google.com or herokuapp.com. Reply to this email with a link of the webpage.     
-[ ] CSS    
+[x] CSS    
