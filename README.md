@@ -1,5 +1,5 @@
 # NotchUp Interview Assignment
-This is web app to book trial class on NotchUp education platform
+This is a web app to book trial class on NotchUp education platform
 
 * [Web app](https://notchup-test.web.app/)        
 * [Frontend code](https://github.com/atiqg/NotchUp-test/tree/main/public)      
