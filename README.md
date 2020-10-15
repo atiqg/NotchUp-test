@@ -1,7 +1,7 @@
 # NotchUp Interview Assignment
 This is a web app to book trial class on NotchUp education platform
 
-![screenshot](./original_assets/screenshot.png)        
+[![screenshot](./original_assets/screenshot.png)](https://www.youtube.com/watch?v=jDvAg_5acSI)        
 [![demo video](./original_assets/thumbnail.png)](https://www.youtube.com/watch?v=jDvAg_5acSI)      
 
 * [Web app](https://notchup-test.web.app/)        
