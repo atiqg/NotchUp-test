@@ -38,3 +38,9 @@ firebase deploy
 ```
 
 use resulting url to access web app 
+
+
+## troubleshoot
+* This project is using NotchUp api endpoint to fetch course and their available time slots, so it can go down or something like that in future      
+* Time slots are old so I am bumping them X days ahead [here](https://github.com/atiqg/NotchUp-test/blob/99cd38b88ef881555b2a8e234758a680c45af8c7/public/script.js#L71)       
+* Importing firebase project can cause problems so direclty use functions/index.js file in fresh fireabse function project
