@@ -1,6 +1,9 @@
 # NotchUp Interview Assignment
 This is a web app to book trial class on NotchUp education platform
 
+![screenshot](./original_assets/screenshot.png)        
+[![demo video](./original_assets/thumbnail.png)](https://www.youtube.com/watch?v=jDvAg_5acSI)      
+
 * [Web app](https://notchup-test.web.app/)        
 * [Frontend code](https://github.com/atiqg/NotchUp-test/tree/main/public)      
 * [Backend code](https://github.com/atiqg/NotchUp-test/tree/main/functions)     
@@ -22,3 +25,16 @@ This is a web app to book trial class on NotchUp education platform
 [✔️] - On each submission, the server should send out an email on the given parent's email id.         
 [✔️] - Host the webpage on a free hosting service like sites.google.com or herokuapp.com. Reply to this email with a link of the webpage.     
 [✔️] CSS    
+
+
+## installation & usage      
+```
+git clone https://github.com/atiqg/NotchUp-test.git
+cd NotchUp-test/functions
+npm install
+firebase functions:config:set gmail.email="<user@gmail.com>" gmail.password="<GMAIL_APP_PASSWORD>"
+cd ..
+firebase deploy
+```
+
+use resulting url to access web app 
